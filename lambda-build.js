@@ -66,7 +66,7 @@ try {
         process.exit(1);
     }
 } catch (e) {
-    if (!quiet) error('Function directory should exist. Given ' + name + ' translated to (' + fullPath + ') does not exist or inaccessible.');
+    if (!quiet) error('Function directory does not exist. Given ' + name + ' translated to (' + fullPath + ') does not exist or inaccessible.');
     process.exit(1);
 }
 
