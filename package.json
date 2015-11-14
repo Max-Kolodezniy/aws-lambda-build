@@ -1,0 +1,33 @@
+{
+    "name": "aws-lambda-build",
+    "version": "1.0.2",
+    "description": "Build and pack AWS Lambda function.",
+    "keywords": [
+        "AWS Lambda",
+        "Local build",
+        "build"
+    ],
+    "license": "MIT",
+    "author": "Max Kolodezniy <m.kolodezniy@gmail.com>",
+    "contributors": [
+        "Max Kolodezniy <m.kolodezniy@gmail.com>"
+    ],
+    "bugs": {
+        "email": "m.kolodezniy@gmail.com"
+    },
+    "preferGlobal": true,
+    "main": "./lambda-build.js",
+    "engines": {
+        "node": ">=5.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Max-Kolodezniy/aws-lambda-build.git"
+    },
+    "bin": {
+        "lambda-build": "./lambda-build.js"
+    },
+    "dependencies": {
+        "archiver": "^0.16.0"
+    }
+}
