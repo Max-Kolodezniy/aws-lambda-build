@@ -78,8 +78,8 @@ archive = path.resolve(archive).replace(/.zip$/, '') + '.zip';
 if (!quiet) console.log('Archive destination set to ' + archive + '.');
 
 // Update npm
-if (!quiet) console.log('Update packages with > $ npm update --prefix=' + fullPath);
-var npm = require('child_process').spawnSync('npm', [ 'update', '--prefix=' + fullPath ]);
+if (!quiet) console.log('Update packages with > $ npm install --prefix=' + fullPath);
+var npm = require('child_process').spawnSync('npm', [ 'install', '--prefix=' + fullPath ]);
 if (npm.status !== 0 || verbose) {
     console.log(npm.stdout.toString());
     if (!quiet && npm.stderr.length) error(npm.stderr.toString());
