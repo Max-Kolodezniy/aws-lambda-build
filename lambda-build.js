@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 
-const os = require('os');
+var os = require('os');
 
 function error(string)
 {
@@ -9,8 +9,8 @@ function error(string)
 }
 
 // Parse args
-const args = {};
-const raw = process.argv.slice(2);
+var args = {};
+var raw = process.argv.slice(2);
 
 if (raw.length === 0) {
     [
@@ -45,20 +45,20 @@ for (var i = 0; i < raw.length; i++) {
     args[raw[i]] = raw[++i];
 }
 
-const quiet = 'q' in args || 'quiet' in args   || false;
+var quiet = 'q' in args || 'quiet' in args   || false;
 var verbose = 'v' in args || 'verbose' in args || false;
 verbose = verbose && !quiet;
 
-const name = args.f || args.function;
+var name = args.f || args.function;
 if (typeof(name) === 'undefined') {
     if (!quiet) error('--function or -f argument is required');
     process.exit(1);
 }
 
-const path = require('path');
-const fs = require('fs');
+var path = require('path');
+var fs = require('fs');
 
-const fullPath = path.resolve(name);
+var fullPath = path.resolve(name);
 if (!quiet) console.log('Function folder "' + name + '" translated to ' + fullPath + '.');
 try {
     if (!fs.statSync(fullPath).isDirectory()) {
@@ -78,8 +78,8 @@ archive = path.resolve(archive).replace(/.zip$/, '') + '.zip';
 if (!quiet) console.log('Archive destination set to ' + archive + '.');
 
 // Update npm
-if (!quiet) console.log('Update packages with > $ npm install --prefix=' + fullPath);
-var npm = require('child_process').spawnSync('npm', [ 'install', '--prefix=' + fullPath ]);
+if (!quiet) console.log('Update packages with > $ npm install');
+var npm = require('child_process').spawnSync('npm', [ 'install' ], { cwd : fullPath });
 if (npm.status !== 0 || verbose) {
     console.log(npm.stdout.toString());
     if (!quiet && npm.stderr.length) error(npm.stderr.toString());
