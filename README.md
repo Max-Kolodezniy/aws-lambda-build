@@ -1,28 +1,29 @@
 # aws-lambda-build
-Build AWS Lambda package (.zip file) including npm modules
-Do the following:
-1. cd function directory
-2. npm update (if verbose > output)
-3. zip to provided (or generated) filename.zip (if zip exists - delete it)
-4. delete all from node_modules. Be careful, it will delete all unsaved changes!
+Build AWS Lambda package (.zip file) including npm modules.
+The most lightweight builder, no external dependencies except *archiver*.
+Easy to use!
 
-## Linux shell file
-Do not forget `chmod +x` on the build.sh file.
+It does the following:
+1. cd function directory
+2. npm install (if verbose > output)
+3. zip to provided (or generated) filename.zip (if zip exists - delete it)
+
 ```
 Usage:
-build.sh
-    -f | --function {PATH_TO_FUNCTION}    Function name (should be the same as function's directory)
-    -n | --name {ARCHIVE_NAME}            Archive name to save the function.
-    -v | --verbose                        If set - output more debug information
+lambda-build
+    --function=functionName    |    -f functionName    |    Required. Path to directory that contains Lambda function
+    --archive=archiveName      |    -a archiveName     |    Zip archive where it will be packed. If not set - Function name will be used
+    --verbose                  |    -v                 |    Output more debug info. Useful for redirect it to log
+    --quiet                    |    -q                 |    No output at all. Watch the exit code
 ```
 
 Next command will produce API_Function.zip file in the current directory.
-This .zip file will contain code ready for uploading to AWS Lambda
+This .zip file will contain code that is ready for uploading to AWS Lambda
+
 ```
+$ aws-lambda-build/build.sh -f API/Function -n API-Function.zip
+Or
 $ aws-lambda-build/build.sh -f API/Function -n API-Function
 Or even
 $ aws-lambda-build/build.sh -f API/Function
 ```
-
-## Windows batch file
-Coming soon

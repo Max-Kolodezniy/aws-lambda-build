@@ -1,6 +1,6 @@
 {
     "name": "aws-lambda-build",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Build and pack AWS Lambda function.",
     "keywords": [
         "AWS Lambda",
