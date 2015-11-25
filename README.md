@@ -30,4 +30,4 @@ Or even
 $ lambda-build/build.sh -f API/Function
 ```
 
-Check out my [aws-lambda-local](https://www.npmjs.com/package/aws-lambda-local "https://github.com/Max-Kolodezniy/aws-lambda-local") package!.
+Check out my [aws-lambda-local](https://www.npmjs.com/package/aws-lambda-local "https://github.com/Max-Kolodezniy/aws-lambda-local") package!
