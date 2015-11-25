@@ -3,10 +3,12 @@ Build AWS Lambda package (.zip file) including npm modules.
 The most lightweight builder, no external dependencies except *archiver*.
 Easy to use!
 
+Windows Mac and Linux tested.
+
 It does the following:
-1. cd function directory
-2. npm install (if verbose > output)
-3. zip to provided (or generated) filename.zip (if zip exists - delete it)
+#. cd function directory
+#. npm install (if verbose > output)
+#. zip to provided (or generated) filename.zip (if zip exists - delete it)
 
 ```
 Usage:
@@ -21,9 +23,9 @@ Next command will produce API_Function.zip file in the current directory.
 This .zip file will contain code that is ready for uploading to AWS Lambda
 
 ```
-$ aws-lambda-build/build.sh -f API/Function -n API-Function.zip
+$ lambda-build/build.sh -f API/Function -n API-Function.zip
 Or
-$ aws-lambda-build/build.sh -f API/Function -n API-Function
+$ lambda-build/build.sh -f API/Function -n API-Function
 Or even
-$ aws-lambda-build/build.sh -f API/Function
+$ lambda-build/build.sh -f API/Function
 ```
