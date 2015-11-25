@@ -6,9 +6,9 @@ Easy to use!
 Windows Mac and Linux tested.
 
 It does the following:
-#. cd function directory
-#. npm install (if verbose > output)
-#. zip to provided (or generated) filename.zip (if zip exists - delete it)
+1. cd function directory
+2. npm install (if verbose > output)
+3. zip to provided (or generated) filename.zip (if zip exists - delete it)
 
 ```
 Usage:
@@ -29,3 +29,5 @@ $ lambda-build/build.sh -f API/Function -n API-Function
 Or even
 $ lambda-build/build.sh -f API/Function
 ```
+
+Check out my [aws-lambda-local](https://www.npmjs.com/package/aws-lambda-local "aws-lambda-local") package!.
