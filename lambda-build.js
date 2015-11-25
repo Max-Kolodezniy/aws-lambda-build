@@ -79,7 +79,8 @@ if (!quiet) console.log('Archive destination set to ' + archive + '.');
 
 // Update npm
 if (!quiet) console.log('Update packages with > $ npm install');
-var npm = require('child_process').spawnSync('npm', [ 'install' ], { cwd : fullPath });
+var npm = /^win/.test(process.platform) ? 'npm.cmd' : 'npm';
+npm = require('child_process').spawnSync(npm, [ 'install' ], { cwd : fullPath });
 if (npm.status !== 0 || verbose) {
     console.log(npm.stdout.toString());
     if (!quiet && npm.stderr.length) error(npm.stderr.toString());
