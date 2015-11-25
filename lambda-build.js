@@ -72,7 +72,7 @@ try {
 
 var archive = args.a || args.archive;
 if (typeof(archive) === 'undefined') {
-    archive = name.replace(/\/\\/g, '-');
+    archive = name.replace(/[\/\\]/g, '_');
 }
 archive = path.resolve(archive).replace(/.zip$/, '') + '.zip';
 if (!quiet) console.log('Archive destination set to ' + archive + '.');
